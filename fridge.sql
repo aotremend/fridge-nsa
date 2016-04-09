@@ -2,7 +2,7 @@
 SQLyog Community v12.09 (64 bit)
 MySQL - 5.6.21 : Database - fridge_nsa
 *********************************************************************
-*/
+*/
 
 /*!40101 SET NAMES utf8 */;
 
@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `item`;
 CREATE TABLE `item` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `code` varchar(255) DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL,
+  `description` text,
   `image_url` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -41,14 +41,14 @@ CREATE TABLE `recipe` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `image_url` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `content` varchar(255) DEFAULT NULL,
+  `content` text,
   `other_products` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `recipe` */
 
-insert  into `recipe`(`id`,`image_url`,`name`,`content`,`other_products`) values (1,'http://images.edge-generalmills.com/3cf7cb34-8f77-4885-bfec-697f96dd5d61.jpg','Apple pie','Make the dough by hand. In a medium bowl, whisk together the flour, sugar, and salt. Using your fingers, work the butter into the dry ingredients until it resembles yellow corn meal mixed with bean sized bits of butter. (If the flour/butter mixture gets w','Flour, Sugar, Salt, Butter, Eggs'),(2,'http://chiefmarkets.com/blog/wp-content/uploads/2012/04/IMG_1609.jpg','Fruit salad','In a small bowl, combine orange juice, vinegar, and sugar. Stir until blended and set aside.','Vinegar, Sugar, Strawberies, Cream');
+insert  into `recipe`(`id`,`image_url`,`name`,`content`,`other_products`) values (1,'http://images.edge-generalmills.com/3cf7cb34-8f77-4885-bfec-697f96dd5d61.jpg','Apple pie','Make the dough by hand. In a medium bowl, whisk together the flour, sugar, and salt. Using your fingers, work the butter into the dry ingredients until it resembles yellow corn meal mixed with bean sized bits of butter. (If the flour/butter mixture gets warm, refrigerate it for 10 minutes before proceeding.) Add the egg and stir the dough together with a fork or by hand in the bowl. If the dough is dry, sprinkle up to a tablespoon more of cold water over the mixture.','Flour, Sugar, Salt, Butter, Eggs'),(2,'http://chiefmarkets.com/blog/wp-content/uploads/2012/04/IMG_1609.jpg','Fruit salad','In a small bowl, combine orange juice, vinegar, and sugar. Stir until blended and set aside. Place cucumber, blueberries, strawberries, and apple in a large bowl. Top with the orange juice mixture and stir gently to coat. Cover and refrigerate for at least 1 hour (overnight is best). Stir gently just before serving. Garnish with mint, if using. Enjoy!!!','Brandy, Sugar, Strawberies, Cream');
 
 /*Table structure for table `recipe_items` */
 
