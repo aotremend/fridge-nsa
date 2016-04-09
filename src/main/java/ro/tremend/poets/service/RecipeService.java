@@ -8,5 +8,5 @@ import java.util.List;
  * Created by Vlad on 09.04.2016.
  */
 public interface RecipeService {
-    List<Recipe> findByCode(String code);
+    List<Recipe> findByCodeIn(String code);
 }

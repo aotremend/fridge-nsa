@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ro.tremend.poets.domain.model.Recipe;
 import ro.tremend.poets.domain.repository.RecipeRepository;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ public class RecipeServiceImpl implements RecipeService {
     private RecipeRepository recipeRepository;
 
     @Override
-    public List<Recipe> findByCode(String code) {
-        return recipeRepository.findByItemsCode(code);
+    public List<Recipe> findByCodeIn(String code) {
+        return recipeRepository.findByItemsCodeIn(Arrays.asList(code.split(",")));
     }
 }

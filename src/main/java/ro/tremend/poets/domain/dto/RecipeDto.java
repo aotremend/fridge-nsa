@@ -63,4 +63,20 @@ public class RecipeDto {
     public void setOtherProducts(String otherProducts) {
         this.otherProducts = otherProducts;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        RecipeDto recipeDto = (RecipeDto) o;
+
+        return id == recipeDto.id;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (id ^ (id >>> 32));
+    }
 }

@@ -20,7 +20,9 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -82,10 +84,11 @@ public class RequestController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/getRecipes")
-    public List<RecipeDto> getRecipes(@RequestParam("code") String code) {
-        List<Recipe> recipes = recipeService.findByCode(code);
+    public Set<RecipeDto> getRecipes(@RequestParam("code") String code) {
+//        code.split(",");
+        List<Recipe> recipes = recipeService.findByCodeIn(code);
 
-        List<RecipeDto> recipeDtos = new ArrayList<>();
+        Set<RecipeDto> recipeDtos = new HashSet<>();
         if(recipes.size() > 0) {
             recipeDtos.addAll(recipes.stream().map(recipe -> new RecipeDto(recipe.getId(), recipe.getName(), recipe.getContent(), recipe.getOtherProducts(), recipe.getImageUrl())).collect(Collectors.toList()));
         }

@@ -78,4 +78,20 @@ public class Recipe {
     public void setOtherProducts(String otherProducts) {
         this.otherProducts = otherProducts;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Recipe recipe = (Recipe) o;
+
+        return id == recipe.id;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (id ^ (id >>> 32));
+    }
 }
