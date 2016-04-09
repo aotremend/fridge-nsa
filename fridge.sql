@@ -3,7 +3,7 @@ SQLyog Community v12.09 (64 bit)
 MySQL - 5.6.21 : Database - fridge_nsa
 *********************************************************************
 */
-
+DROP DATABASE `fridge_nsa`;
 /*!40101 SET NAMES utf8 */;
 
 /*!40101 SET SQL_MODE=''*/;
