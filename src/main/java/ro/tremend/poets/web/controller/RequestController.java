@@ -11,8 +11,8 @@ import ro.tremend.poets.config.FridgeNsaApplication;
 import ro.tremend.poets.domain.dto.ItemDto;
 import ro.tremend.poets.domain.dto.RecipeDto;
 import ro.tremend.poets.domain.model.Item;
-import ro.tremend.poets.domain.model.Message;
 import ro.tremend.poets.domain.model.Recipe;
+import ro.tremend.poets.service.ImageProcessingService;
 import ro.tremend.poets.service.ItemService;
 import ro.tremend.poets.service.RecipeService;
 
@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
  * Created by Vlad on 09.04.2016.
  */
 @RestController
-public class RequestController {;
+public class RequestController {
 
     @Autowired
     ItemService itemService;
@@ -35,9 +35,11 @@ public class RequestController {;
     @Autowired
     RecipeService recipeService;
 
+    @Autowired
+    ImageProcessingService imageProcessingService;
 
     @RequestMapping(method = RequestMethod.POST, value = "/upload")
-    public ItemDto handleFileUpload(@RequestParam("file") MultipartFile file) {
+    public List<ItemDto> handleFileUpload(@RequestParam("file") MultipartFile file) {
         if (file.getOriginalFilename().contains("/")) {
 //            throw new Message("error", "Folder separators not allowed");
             return null;
@@ -54,10 +56,19 @@ public class RequestController {;
                 FileCopyUtils.copy(file.getInputStream(), stream);
                 stream.close();
 
+                List<String> itemCodes = imageProcessingService.processResult();
+                List<ItemDto> itemDtos = new ArrayList<>();
 
+                if(itemCodes.size() > 0) {
+                    for (String itemCode : itemCodes) {
+                        Item item = itemService.findByCode(itemCode);
+                        if(item != null) {
+                            itemDtos.add(new ItemDto(item.getId(), item.getName(), item.getDescription(), item.getImageUrl()));
+                        }
+                    }
+                }
 
-                Item item = itemService.findByCode("apple");
-                return new ItemDto(item.getId(), item.getName(), item.getContent(), item.getImageUrl());
+                return itemDtos;
             }
             catch (Exception e) {
 //                return new Message("error", "You failed to upload " + file.getOriginalFilename() + " => " + e.getMessage());
@@ -76,7 +87,7 @@ public class RequestController {;
 
         List<RecipeDto> recipeDtos = new ArrayList<>();
         if(recipes.size() > 0) {
-            recipeDtos.addAll(recipes.stream().map(recipe -> new RecipeDto(recipe.getId(), recipe.getName(), recipe.getContent(), recipe.getImageUrl())).collect(Collectors.toList()));
+            recipeDtos.addAll(recipes.stream().map(recipe -> new RecipeDto(recipe.getId(), recipe.getName(), recipe.getContent(), recipe.getOtherProducts(), recipe.getImageUrl())).collect(Collectors.toList()));
         }
 
         return  recipeDtos;

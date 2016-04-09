@@ -1,9 +1,9 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://52.26.176.218:3306/fridge_nsa
-    username: poet
-    password: poets
+    url: jdbc:mysql://localhost:3306/fridge_nsa
+    username: root
+    password:
   jpa:
     hibernate:
       dialect: org.hibernate.dialect.MySQLInnoDBDialect

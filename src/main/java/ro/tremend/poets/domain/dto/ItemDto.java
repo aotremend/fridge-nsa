@@ -1,21 +1,23 @@
 package ro.tremend.poets.domain.dto;
 
+import com.fasterxml.jackson.annotation.JsonRootName;
+
 /**
  * Created by Vlad on 09.04.2016.
  */
 public class ItemDto {
     private long id;
     private String name;
-    private String content;
+    private String description;
     private String imageUrl;
 
     public ItemDto() {
     }
 
-    public ItemDto(long id, String name, String content, String imageUrl) {
+    public ItemDto(long id, String name, String description, String imageUrl) {
         this.id = id;
         this.name = name;
-        this.content = content;
+        this.description = description;
         this.imageUrl = imageUrl;
     }
 
@@ -23,16 +25,8 @@ public class ItemDto {
         return id;
     }
 
-    public String getContent() {
-        return content;
-    }
-
     public void setId(long id) {
         this.id = id;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 
     public String getImageUrl() {
@@ -49,5 +43,13 @@ public class ItemDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

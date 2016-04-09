@@ -16,15 +16,13 @@ public class Item {
     private long id;
     private String name;
     private String code;
-    private String content;
     private String description;
     private String imageUrl;
 
     protected Item() {}
 
-    public Item(String name, String content, String description, String imageUrl) {
+    public Item(String name, String description, String imageUrl) {
         this.name = name;
-        this.content = content;
         this.description = description;
         this.imageUrl = imageUrl;
     }
@@ -67,13 +65,5 @@ public class Item {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 }

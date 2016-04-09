@@ -15,6 +15,7 @@ public class Recipe {
     private String name;
     private String content;
     private String imageUrl;
+    private String otherProducts;
 
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Item> items;
@@ -22,10 +23,11 @@ public class Recipe {
     public Recipe() {
     }
 
-    public Recipe(String name, String content, String imageUrl, List<Item> items) {
+    public Recipe(String name, String content, String imageUrl, String otherProducts, List<Item> items) {
         this.name = name;
         this.content = content;
         this.imageUrl = imageUrl;
+        this.otherProducts = otherProducts;
         this.items = items;
     }
 
@@ -67,5 +69,13 @@ public class Recipe {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getOtherProducts() {
+        return otherProducts;
+    }
+
+    public void setOtherProducts(String otherProducts) {
+        this.otherProducts = otherProducts;
     }
 }
