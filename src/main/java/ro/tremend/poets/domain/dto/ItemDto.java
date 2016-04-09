@@ -1,4 +1,4 @@
-package ro.tremend.poets.domain.model.dto;
+package ro.tremend.poets.domain.dto;
 
 /**
  * Created by Vlad on 09.04.2016.
