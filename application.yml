@@ -7,7 +7,7 @@ spring:
   jpa:
     hibernate:
       dialect: org.hibernate.dialect.MySQLInnoDBDialect
-      ddl-auto: validate
+      ddl-auto: update
 
 multipart:
   maxFileSize: 15MB

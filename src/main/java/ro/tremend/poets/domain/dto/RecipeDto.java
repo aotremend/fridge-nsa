@@ -3,16 +3,16 @@ package ro.tremend.poets.domain.dto;
 /**
  * Created by Vlad on 09.04.2016.
  */
-public class ItemDto {
+public class RecipeDto {
     private long id;
     private String name;
     private String content;
     private String imageUrl;
 
-    public ItemDto() {
+    public RecipeDto() {
     }
 
-    public ItemDto(long id, String name, String content, String imageUrl) {
+    public RecipeDto(long id, String name, String content, String imageUrl) {
         this.id = id;
         this.name = name;
         this.content = content;
@@ -23,12 +23,20 @@ public class ItemDto {
         return id;
     }
 
-    public String getContent() {
-        return content;
-    }
-
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getContent() {
+        return content;
     }
 
     public void setContent(String content) {
@@ -41,13 +49,5 @@ public class ItemDto {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

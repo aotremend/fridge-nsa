@@ -1,32 +1,32 @@
 package ro.tremend.poets.domain.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Vlad on 09.04.2016.
  */
-@Entity
-public class Item {
 
+@Entity
+public class Recipe {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
     private String name;
-    private String code;
     private String content;
-    private String description;
     private String imageUrl;
 
-    protected Item() {}
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Item> items;
 
-    public Item(String name, String content, String description, String imageUrl) {
+    public Recipe() {
+    }
+
+    public Recipe(String name, String content, String imageUrl, List<Item> items) {
         this.name = name;
         this.content = content;
-        this.description = description;
         this.imageUrl = imageUrl;
+        this.items = items;
     }
 
     public long getId() {
@@ -45,28 +45,20 @@ public class Item {
         this.name = name;
     }
 
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getImageUrl() {
         return imageUrl;
     }
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     public String getContent() {
