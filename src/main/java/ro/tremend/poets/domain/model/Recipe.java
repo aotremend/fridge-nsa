@@ -13,6 +13,7 @@ public class Recipe {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
     private String name;
+    @Column(columnDefinition = "TEXT")
     private String content;
     private String imageUrl;
     private String otherProducts;

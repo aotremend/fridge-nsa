@@ -1,0 +1,2 @@
+ALTER TABLE `fridge_nsa`.`item` CHANGE `description` `description` TEXT CHARSET latin1 COLLATE latin1_swedish_ci NULL;
+ALTER TABLE `fridge_nsa`.`recipe` CHANGE `content` `content` TEXT CHARSET latin1 COLLATE latin1_swedish_ci NULL;

@@ -1,9 +1,6 @@
 package ro.tremend.poets.domain.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Vlad on 09.04.2016.
@@ -16,6 +13,7 @@ public class Item {
     private long id;
     private String name;
     private String code;
+    @Column(columnDefinition = "TEXT")
     private String description;
     private String imageUrl;
 
