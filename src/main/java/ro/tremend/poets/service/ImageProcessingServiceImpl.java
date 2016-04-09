@@ -1,5 +1,6 @@
 package ro.tremend.poets.service;
 
+import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Service;
 import ro.tremend.poets.config.FridgeNsaApplication;
 
@@ -36,6 +37,12 @@ public class ImageProcessingServiceImpl implements ImageProcessingService {
 
         } catch (IOException e) {
 
+        }
+
+        try {
+            FileUtils.cleanDirectory(new File(FridgeNsaApplication.ROOT));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return itemList;
     }

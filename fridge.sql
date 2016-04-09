@@ -4,6 +4,7 @@ MySQL - 5.6.21 : Database - fridge_nsa
 *********************************************************************
 */
 DROP DATABASE `fridge_nsa`;
+
 /*!40101 SET NAMES utf8 */;
 
 /*!40101 SET SQL_MODE=''*/;
@@ -31,7 +32,7 @@ CREATE TABLE `item` (
 
 /*Data for the table `item` */
 
-insert  into `item`(`id`,`code`,`description`,`image_url`,`name`) values (1,'orange','Oranges are an excellent source of vitamin C. They are also a very good source of dietary fiber. In addition, oranges are a good source of B vitamins including vitamin B1, pantothenic acid, and folate as well as vitamin A, calcium, copper, and potassium.','http://preview.turbosquid.com/Preview/2014/05/26__12_06_50/Orange_fruit_1.jpg7d55a7de-0e63-47c9-9e4c-c61306a42257Original.jpg','Spanish Orange'),(2,'banana','Bananas are a very good source of vitamin B6 and a good source of manganese, vitamin C, potassium, dietary fiber, potassium, biotin, and copper.','http://www.bbcgoodfood.com/sites/default/files/glossary/banana-crop.jpg','Banana'),(3,'beer','Heineken Lager Beer (Dutch: Heineken Pilsener), or simply Heineken (Dutch pronunciation: [???in?k?n]), is a pale lager beer with 5% alcohol by volume produced by the Dutch brewing company Heineken International. Heineken is well known for its signature gr','https://uk.i-d-s.com/ImageHandler/2199w999h999/13155-jpg?Sequence=2199&Width=999&Height=999','Heineken');
+insert  into `item`(`id`,`code`,`description`,`image_url`,`name`) values (1,'orange','Oranges are an excellent source of vitamin C. They are also a very good source of dietary fiber. In addition, oranges are a good source of B vitamins including vitamin B1, pantothenic acid, and folate as well as vitamin A, calcium, copper, and potassium.','http://preview.turbosquid.com/Preview/2014/05/26__12_06_50/Orange_fruit_1.jpg7d55a7de-0e63-47c9-9e4c-c61306a42257Original.jpg','Spanish Orange'),(2,'banana','Bananas are a very good source of vitamin B6 and a good source of manganese, vitamin C, potassium, dietary fiber, potassium, biotin, and copper.','http://www.bbcgoodfood.com/sites/default/files/glossary/banana-crop.jpg','Banana'),(3,'beer','Heineken Lager Beer (Dutch: Heineken Pilsener), or simply Heineken, is a pale lager beer with 5% alcohol by volume produced by the Dutch brewing company Heineken International. Heineken is well known for its signature gr','https://uk.i-d-s.com/ImageHandler/2199w999h999/13155-jpg?Sequence=2199&Width=999&Height=999','Heineken');
 
 /*Table structure for table `recipe` */
 
