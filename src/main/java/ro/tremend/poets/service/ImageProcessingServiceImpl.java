@@ -23,14 +23,20 @@ public class ImageProcessingServiceImpl implements ImageProcessingService {
         } while (!f.exists());
 
         try {
-            Thread.sleep(500);
+            Thread.sleep(200);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
+//        try {
+//            itemList = FileUtils.readLines(new File(FridgeNsaApplication.ROOT + "/result.txt"));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
-            while ((line = br.readLine()) != null) {
+            while (br.ready() && (line = br.readLine()) != null) {
                 itemList.add(line);
             }
         } catch (FileNotFoundException e) {

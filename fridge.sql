@@ -27,11 +27,11 @@ CREATE TABLE `item` (
   `image_url` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `item` */
 
-insert  into `item`(`id`,`code`,`description`,`image_url`,`name`) values (2,'banana','Bananas are a very good source of vitamin B6 and a good source of manganese, vitamin C, potassium, dietary fiber, potassium, biotin, and copper.','http://www.bbcgoodfood.com/sites/default/files/glossary/banana-crop.jpg','Banana'),(3,'beer','Heineken Lager Beer (Dutch: Heineken Pilsener), or simply Heineken, is a pale lager beer with 5% alcohol by volume produced by the Dutch brewing company Heineken International. Heineken is well known for its signature gr','https://uk.i-d-s.com/ImageHandler/2199w999h999/13155-jpg?Sequence=2199&Width=999&Height=999','Heineken'),(4,'kiwi','Kiwifruit is an excellent source of vitamin C and vitamin K as well as a very good source of copper and dietary fiber. It is also a good source of vitamin E, potassium, folate, and manganese.','https://upload.wikimedia.org/wikipedia/commons/5/59/Kiwi1.1.jpg','Kiwi'),(5,'milk','Milk and dairy foods are healthy foods and considered nutrient-rich because they serve as good sources of calcium and vitamin D as well as protein and other essential nutrients. They provide phosphorus, potassium, magnesium, and vitamins A, B12, and riboflavin.','http://www.livrari-online.ro/shop/image/cache/data/lapteladorna-500x500.jpg','La Dorna'),(6,'apple','These important nutritional elements include vitamin C, vitamin K, vitamin B6, and riboflavin, as well as minerals like potassium, copper, manganese, and magnesium. Apples are also very good sources of dietary fiber, and a single serving provides 12% of the daily fiber requirement.','http://weknowyourdreamz.com/images/apple/apple-01.jpg','Apple');
+insert  into `item`(`id`,`code`,`description`,`image_url`,`name`) values (2,'banana','Bananas are a very good source of vitamin B6 and a good source of manganese, vitamin C, potassium, dietary fiber, potassium, biotin, and copper.','http://www.bbcgoodfood.com/sites/default/files/glossary/banana-crop.jpg','Banana'),(3,'beer','Heineken Lager Beer (Dutch: Heineken Pilsener), or simply Heineken, is a pale lager beer with 5% alcohol by volume produced by the Dutch brewing company Heineken International. Heineken is well known for its signature gr','https://uk.i-d-s.com/ImageHandler/2199w999h999/13155-jpg?Sequence=2199&Width=999&Height=999','Heineken'),(4,'kiwi','Kiwifruit is an excellent source of vitamin C and vitamin K as well as a very good source of copper and dietary fiber. It is also a good source of vitamin E, potassium, folate, and manganese.','https://upload.wikimedia.org/wikipedia/commons/5/59/Kiwi1.1.jpg','Kiwi'),(5,'milk','Milk and dairy foods are healthy foods and considered nutrient-rich because they serve as good sources of calcium and vitamin D as well as protein and other essential nutrients. They provide phosphorus, potassium, magnesium, and vitamins A, B12, and riboflavin.','http://www.livrari-online.ro/shop/image/cache/data/lapteladorna-500x500.jpg','La Dorna'),(6,'apple','These important nutritional elements include vitamin C, vitamin K, vitamin B6, and riboflavin, as well as minerals like potassium, copper, manganese, and magnesium. Apples are also very good sources of dietary fiber, and a single serving provides 12% of the daily fiber requirement.','http://weknowyourdreamz.com/images/apple/apple-01.jpg','Apple'),(7,'orange','Oranges are an excellent source of vitamin C. They are also a very good source of dietary fiber. In addition, oranges are a good source of B vitamins including vitamin B1, pantothenic acid, and folate as well as vitamin A, calcium, copper, and potassium.','https://upload.wikimedia.org/wikipedia/commons/7/7b/Orange-Whole-%26-Split.jpg','Orange');
 
 /*Table structure for table `recipe` */
 
@@ -65,7 +65,7 @@ CREATE TABLE `recipe_items` (
 
 /*Data for the table `recipe_items` */
 
-insert  into `recipe_items`(`recipe_id`,`items_id`) values (2,2),(4,5),(4,6),(2,6);
+insert  into `recipe_items`(`recipe_id`,`items_id`) values (2,2),(4,5),(4,6),(2,6),(2,4),(2,7);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
